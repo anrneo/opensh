@@ -1,0 +1,54 @@
+extends ./layout
+block contenido
+	div(id="mySidenav" class="sidenav")
+		a(href="/signup" id="crearop") Crear OP
+		a(href="/borrar" id="borrarop") Borrar OP 
+	h2(class='text-align-center') Por favor ingresa los datos:
+	div(id='form')
+		form(form autocomplete="off" action='/users' method='POST' )
+			label(for='op') 
+				strong OP
+			input(type='text' name='op' placeholder='op' id='op' 
+				class='form-control' required='true' autofocus)
+			label(for='op') 
+				strong TRAZO
+			input(type='text' name='trazo' placeholder='Trazo' 
+				id='trazo' class='form-control' required='true')
+			label(for='cliente') 
+				strong CLIENTE
+			select(name='cliente')
+				option(value="ARTURO C") ARTURO C
+				option(value="ASICS") ASICS
+				option(value="BATA") BATA
+				option(value="COLDWATER") COLDWATER
+				option(value="CRYSTAL") CRYSTAL
+				option(value="DIDETEXCO") DIDETEXCO
+				option(value="KIDS") KIDS
+				option(value="LEONISA") LEONISA
+				option(value="POLO") POLO
+				option(value="TERRITORIO") TERRITORIO
+				option(value="ZUMA BLUE") ZUMA BLUE
+				option(value="ZUMBA") ZUMBA
+				option(value="OTROS") OTROS
+			label(for='ref') 
+				strong REFERENCIA
+			input(type='text' name='ref' placeholder='Referencia' 
+				id='ref' class='form-control' required='true')
+			label(for='unidades') 
+				strong UNIDADES
+			input(type='text' name='uds' placeholder='Unidades' 
+				id='uds' class='form-control' required='true')
+			label(for='modu') 
+				strong MODULO
+			input(type='text' name='modu' placeholder='Modulo' 
+				id='modu' class='form-control' required='true')
+			label(for='est') 
+				strong ESTAMPADO
+			input(type='text' name='est' placeholder='Si = 1' 
+				id='est' class='form-control' )
+			label(for='fecha') 
+				strong FECHA DE PROGRAMACION
+			input(type='date' name='fecha' placeholder='aaaa/mm/dd' 
+				id='fecha' class='form-control' required='true')
+			input(type='submit'  value='Crear OP' class='btn btn-info')
+			

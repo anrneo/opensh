@@ -1,0 +1,69 @@
+extends ./layout
+block contenido
+	h2(class='text-align-center') Por favor ingresa la OP y TRAZO en el proceso correspondiente
+	div(id='table')
+		div(class='div_grid')
+		form(action='/extendido' method='POST')
+			div(class='grid-container')
+				div
+					strong EXTENDIDO
+				div
+					input(type='text' name='extendido' placeholder='OP' id='inpgrid' 
+					class='form-control' required='true')
+				div
+					input(type='text' name='t_ex' placeholder='Trazo' id='inpgrid' 
+					class='form-control' required='true')
+				div
+					input(type='submit' value='extendido' id='btn' class='btn btn-info')
+		div(class='div_grid')
+		form(action='/corte' method='POST')
+			div(class='grid-container')
+				div
+					strong CORTE
+				div
+					input(type='text' name='corte' placeholder='OP' 
+					id='inpgrid' class='form-control' required='true')
+				div
+					input(type='text' name='t_co' placeholder='Trazo' id='inpgrid' 
+					class='form-control' required='true')
+				div
+					input(type='submit' value='Corte' id='btn' class='btn btn-info')
+		div(class='div_grid')
+		form(action='/tiqueteo' method='POST')
+			div(class='grid-container')
+				div
+					strong TIQUETEO
+				div
+					input(type='text' name='tiqueteo' placeholder='OP' 
+					id='inpgrid' class='form-control' required='true')
+				div
+					input(type='text' name='t_ti' placeholder='Trazo' id='inpgrid' 
+					class='form-control' required='true')
+				div
+					input(type='submit' value='tiqueteo' id='btn' class='btn btn-info')
+		div(class='div_grid')
+		form(action='/preparacion' method='POST')
+			div(class='grid-container')
+				div
+					strong PREPARACION
+				div
+					input(type='text' name='preparacion' placeholder='OP' 
+					id='inpgrid' class='form-control' required='true')
+				div
+					input(type='text' name='t_pr' placeholder='Trazo' id='inpgrid' 
+					class='form-control' required='true')
+				div
+					input(type='submit' value='Preparacion' id='btn' class='btn btn-info')
+		div(class='div_grid')
+		form(action='/estampado' method='POST')
+			div(class='grid-container')
+				div
+					strong ESTAMPADO
+				div
+					input(type='text' name='estampado' placeholder='OP' 
+					id='inpgrid' class='form-control' required='true')
+				div
+					input(type='text' name='t_es' placeholder='Trazo' id='inpgrid' 
+					class='form-control' required='true')
+				div
+					input(type='submit' value='estampado' id='btn' class='btn btn-info')

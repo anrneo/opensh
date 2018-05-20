@@ -1,0 +1,6 @@
+extends ../layout
+block contenido 
+    div(class='img-container')
+     h2 Cliente: #{img.cliente} --- Referencia: #{img.referencia} 
+     - var i = img._id+'.'+img.extension
+     img(src='/imagen/'+i class='main-img')

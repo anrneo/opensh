@@ -1,0 +1,43 @@
+extends ./layout
+block contenido
+	div(id="mySidenav" class="sidenav")
+		a(href="/matriz" id="matriz") Matriz
+		a(href="/horas" id="extras") Extras
+	h2(class='text-align-center') Por favor ingresa la fecha inicial y final:
+	div(id='form')
+		form(id='dat_mat')
+			label(for='fecha_i') 
+				strong Fecha inicial
+			input(type='date' name='fecha_i' placeholder='aaaa/mm/dd' id='fecha_i' 
+				class='form-control' required='true' autofocus)
+			label(for='fecha_f') 
+				strong Fecha final
+			input(type='date' name='fecha_f' placeholder='aaaa/mm/dd' id='fecha_f' 
+				class='form-control' required='true')
+			input(type='submit' value='Generar Matriz' class='btn btn-info')
+	div(id='table')
+		table
+			thead
+				tr
+					th(class='th1') TOTALES
+					th(id='t7' class='th1')
+					th(id='t1' class='th1')
+					th(id='t2' class='th1')
+					th(id='t3' class='th1')
+					th(id='t4' class='th1')
+					th(id='t5' class='th1')
+					th(id='t6' class='th1')
+				tr
+					th(class='th1') FECHA 
+					th(class='th1') UDS
+					th(class='th1') EXTRAS
+					th(class='th1') COSTO EXTRAS
+					th(class='th1') COSTO MOD
+					th(class='th1') FACTURACION
+					th(class='th1') COSTO TOTAL
+					th(class='th1') UTILIDAD
+			tbody
+    
+	script
+		include ./scripts/jquery-3.3.1.min.js
+		include ./scripts/matajax.js

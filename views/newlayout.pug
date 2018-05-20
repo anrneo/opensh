@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+		meta(http-equiv="X-UA-Compatible", content="ie=edge")
+		link(rel='stylesheet' href='/public/css/app.css')
+		title Control Corte CI ElGlobo
+	body
+		nav(class='large-padding black white-text')
+			ul
+				li
+					a(href='/codesapp') Created by: Carlos Villa®
+				li
+					form(action='/buscar' method='POST')
+						input(type='text' name='buscar' placeholder='Buscar OP' 
+				id='buscar' class='form-control')
+				li
+					a(href='/') Estado de Corte
+				li
+					a(href="/modus") Modulos y Estampacion
+		block contenido

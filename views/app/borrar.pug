@@ -1,0 +1,32 @@
+extends ../layout
+block contenido
+	div(id="mySidenav" class="sidenav")
+		a(href="/signup" id="crearop") Crear OP
+		a(href="/borrar" id="borrarop") Borrar OP 
+	br
+	div(id='form')
+		form(id='dat_borrar')
+			label(for='borrar') 
+				strong Ingresa la Op
+			input(type='text' name='op' placeholder='Op a editar' id='op' 
+				class='form-control' required='true' autofocus)
+			input(type='submit' value='Consultar OP' class='btn btn-info')
+	h2(class='text-align-center') Selecciona la op a editar o eliminar
+	div(id='table')
+		table
+			thead
+				tr
+					th(class='th1') id
+					th(class='th1') OP
+					th(class='th1') TR
+					th(class='th1') REF
+					th(class='th1') UDS
+					th(class='th1') MOD
+					th(class='th1') F_PROGRAM
+					th(class='th1') EXTENDIDO
+					th(class='th1') BORRAR
+				tr
+			tbody
+	script
+		include ../scripts/jquery-3.3.1.min.js
+		include ../scripts/matajax.js

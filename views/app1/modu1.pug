@@ -1,0 +1,31 @@
+extends ../newlayout
+block contenido
+    div(id='botonmod')
+        button(class="btn success" id='mod3') Modulo 3
+        button(class="btn info" id='mod4') Modulo 4
+        button(class="btn warning" id='mod7') Modulo 7
+        button(class="btn danger" id='mod10') Modulo 10
+        button(class="btn default" id='mod11') Modulo 11  
+        button(class="btn snpedro" id='mod13') San Pedro
+        button(class="btn est" id='est') Estampados
+    h2(class='text-align-center' id='tit')
+    h2(class='text-align-center' id='uds')   
+    div(id='table')
+        table
+            thead
+                tr
+                    th(class='th1') OP
+                    th(class='th1') TR
+                    th(class='th1') CLIENTE
+                    th(class='th1') REF
+                    th(class='th1') UDS
+                    th(class='th1') MOD
+                    th(class='th1') F_PROGRA   
+                    th(class='th1') EXTENDIDO
+                    th(class='th1') CORTE
+                    th(class='th1') TIQUETEO
+                tr
+            tbody
+    script
+        include ../scripts/jquery-3.3.1.min.js
+        include ../scripts/modus.js

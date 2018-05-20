@@ -1,0 +1,43 @@
+extends ../layout
+block contenido
+	div(id='botonmod')
+		button(class="btn success" id='borrar_bio') Borrar datos
+	h2(class='text-align-center') Por favor ingresa los datos del bihorario:
+	div(id='form')
+		form(id='dat_bio')
+			label(for='etapa') 
+				strong Etapa Bihorario
+			select(name='etapa_bio' id='etapa_bio')
+				option(value="1") 0 - 2 Horas
+				option(value="2") 2 - 4 Horas
+				option(value="3") 4 - 6 Horas
+				option(value="4") 6 - 8 Horas
+			label(for='valor_bio') 
+				strong Valor etapa bihorario
+			input(type='text' name='valor_bio' placeholder='valor bihorario' id='valor_bio' 
+				class='form-control' required='true')
+			label(for='operario') 
+				strong Nombre de operario
+			select(name='operario' id='operario')
+				option(value="ARNULFO MENDEZ") ARNULFO MENDEZ
+				option(value="CRISTIAN CARMONA") CRISTIAN CARMONA
+				option(value="GUSTAVO VANEGAS") GUSTAVO VANEGAS
+				option(value="JOAQUIN AMARILES") JOAQUIN AMARILES
+				option(value="JOVANNY TORO") JOVANNY TORO
+				option(value="LUIS CHAVARRIAGA") LUIS CHAVARRIAGA
+			input(type='submit' value='Generar Bihorario' class='btn btn-info')
+	div(id='table')
+		table
+			thead
+				tr
+					th(class='th1') OPERARIO
+					th(class='th1') 0 - 2 HORAS
+					th(class='th1') 2 - 4 HORAS
+					th(class='th1') 4 - 6 HORAS
+					th(class='th1') 6 - 8 HORAS
+			tbody
+
+	
+	script
+		include ../scripts/jquery-3.3.1.min.js
+		include ../scripts/bio.js
