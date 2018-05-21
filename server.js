@@ -28,7 +28,11 @@ app.set('view engine', 'pug')
 	res.render('codesapp')		
 })*/
 var port = process.env.OPENSHIFT_NODEJS_PORT || 8080
-    ip   = process.env.OPENSHIFT_NODEJS_IP || '172.30.156.240'
+    ip   = process.env.OPENSHIFT_NODEJS_IP || 'localhost'
+ console.log(process.env.OPENSHIFT_NODEJS_PORT);
+ console.log(process.env.OPENSHIFT_NODEJS_IP);
+ 
+
 
 app.get('/', function(req, res){
 	Corte.find({preparacion:undefined}).sort({extendido:1}).then(function(datos){
