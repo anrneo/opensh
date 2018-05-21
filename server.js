@@ -61,15 +61,47 @@ app.get('/borrar_bio', function(req, res){
 
 app.post('/dat_bio', (req,res)=>{
 	var valor=req.body.valor/(50000/4)*100
-		/*if(req.body.etapa==1){
-			var bio = new Bio({
-				operario:req.body.operario,
-				})
-				bio.save().then((ok)=>{
-					console.log(ok);
-					
-				})
-			}*/
+	
+	Bio.find({operario:req.body.operario}).then((ok)=>{
+		if(ok[0]==undefined){
+			var bio= new Bio({
+				operario:req.body.operario
+			})
+			bio.save().then((us)=>{
+				if(req.body.etapa==1){
+					Bio.update({operario:req.body.operario},
+						{$set:{valor1: valor.toFixed(2), valor2:0, valor3:0, valor4:0}}).then((ok)=>{
+							Bio.find().then((dat)=>{
+								res.send({dat})
+							})								
+						})
+					}
+				if(req.body.etapa==2){
+					Bio.update({operario:req.body.operario},
+						{$set:{valor2: valor.toFixed(2), valor3:0, valor4:0}}).then((ok)=>{
+							Bio.find().then((dat)=>{
+								res.send({dat})
+							})								
+						})
+					}
+					if(req.body.etapa==3){
+						Bio.update({operario:req.body.operario},
+							{$set:{valor3: valor.toFixed(2), valor4:0}}).then((ok)=>{
+								Bio.find().then((dat)=>{
+									res.send({dat})
+								})								
+							})
+							}
+						if(req.body.etapa==4){
+							Bio.update({operario:req.body.operario},
+								{$set:{valor4: valor.toFixed(2)}}).then((ok)=>{
+									Bio.find().then((dat)=>{
+										res.send({dat})
+									})								
+								})
+							}
+			})
+		}else{
 			if(req.body.etapa==1){
 				Bio.update({operario:req.body.operario},
 					{$set:{valor1: valor.toFixed(2), valor2:0, valor3:0, valor4:0}}).then((ok)=>{
@@ -102,6 +134,10 @@ app.post('/dat_bio', (req,res)=>{
 								})								
 							})
 						}
+		}
+		
+	})
+			
 
 })
 
