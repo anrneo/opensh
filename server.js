@@ -14,25 +14,15 @@ var server = http.Server(app)
 
 app.use(upload_image.parse({keepExtensions:true}))
 app.use('/public', express.static('public'))
-//app.use('/views', express.static('views'))
-app.use(bodyParser.json()) //para peticiones application json
-//app.use(express.static(__dirname+'/views'))
+app.use(bodyParser.json()) 
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(methodOverride('_method'))
 
 app.set('view engine', 'pug')
 
-/*app.get('/up', (req,res)=>{
-	Matriz.remove({_id: '5adb8865121ad70693cb03e7'}).then((l)=>{console.log(l)})
-	//Corte.update({_id:l[2]._id},{$set:{preparacion:'2018-04-14'}}).then((i)=>{console.log(i)})
-	res.render('codesapp')		
-})*/
-var port = process.env.OPENSHIFT_NODEJS_PORT || 8080
-    ip   = process.env.OPENSHIFT_NODEJS_IP || 'localhost'
- console.log(process.env.OPENSHIFT_NODEJS_PORT);
- console.log(process.env.OPENSHIFT_NODEJS_IP);
- 
 
+var port = process.env.OPENSHIFT_NODEJS_PORT || 8080
+    ip   = process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0'
 
 app.get('/', function(req, res){
 	Corte.find({preparacion:undefined}).sort({extendido:1}).then(function(datos){
